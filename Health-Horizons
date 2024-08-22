@@ -1,0 +1,172 @@
+import random
+import time
+
+#Doctor's advice
+Advice = ["eat vitamins and minerals.",
+          "minimize your sugar intake",
+          "avoid processed foods", 
+          "get moving"]
+
+advice_choose = random.choice(Advice)
+
+#Intro
+print("Welcome to health care by Health Horizons")
+time.sleep(1)
+print("Where we guide you to a path of health and good nutrition \n")
+time.sleep(1)
+print("Before we start, please watch this video frst...")
+time.sleep(1)
+print("https://www.youtube.com/watch?v=Cg_GW7yhq20 \n")
+
+#Ask for name
+name = input("What is your name? ")
+print("Hello " + name)
+
+#Functions for age
+def kid():
+    print("As for your age, your diet is:\n")
+    time.sleep(1)
+    print("64–68% carbs, 22–25% fats, and 73–82% protein.\n")
+    time.sleep(1)
+    print(f"dont forget to {advice_choose} \n")
+    time.sleep(1)
+
+def teens():
+     print("As for your age, your diet is:\n")
+     time.sleep(1)
+     print("45–65% carbs, 25–35% fats, and 10–30% protein.\n")
+     time.sleep(1)
+     print(f"dont forget to {advice_choose} \n")
+     time.sleep(1)
+
+def adults():
+    print("As for your age, your diet is: \n")
+    time.sleep(1)
+    print("13-15% fiber, 29–35% fats, and 54–60% protein. \n")
+    time.sleep(1)
+    print(f"dont forget to {advice_choose} \n")
+    time.sleep(1)
+
+
+#Function for weight
+def overweight():
+    if weight > (height - 100):
+        print("You are overweight \n")
+        time.sleep(1)
+        print("As for your weight, you should follow the low-carb diet \n")
+
+def underwight():
+    if weight < (height - 100):
+        print("You are underweight \n")
+        time.sleep(1)
+        print("As for your weight, you should follow the high-carb diet \n")
+    
+
+#Questions
+gender = input("\n What is your gender? (male (m) / female(f) ")
+
+##age error soloution
+
+while True:
+    try:
+        age = float(input("\n What is your age? "))
+        if age  not in range(0, 120): # Assuming ages are between 0 and 120
+            print("Please enter a valid number")
+        else:
+            break    
+    except ValueError:
+        print("please enter a valid number")
+    
+
+##continue the questions...
+train = input("\n Do you train?(yes/no) ")
+
+height = float(input("\n What is your height?(cm) "))
+
+weight = float(input("\n What is your weight?(kg) "))
+
+print("")
+
+
+#If statements
+if age < 13:
+    if train.lower() == "yes":
+        print("Great job!!! \n")
+    else:
+        print("Why not start training then? \n")
+    print("Not to mention \n")
+    underwight()
+    overweight()
+    print("Also...\n")
+    kid()
+    print("Here is a video to help you with your diet")
+    print("https://youtu.be/dhpCdqOtuj0?si=Cdxj6-IgdrQBdaTr \n")
+    time.sleep(1)
+
+elif age > 12 and age < 20:
+    if train.lower() == "yes":
+        print("That's one step ahead to becoming a healthy person \n")
+    else:
+        print("Why not start training then? You're in your prime!!! \n")
+        
+    print("Not to mention \n")
+    underwight()
+    overweight()
+    print("Also... \n")    
+    teens()
+    print("Here is a video to help you with your diet")
+    print("https://youtu.be/YMKh0qc4vGs?si=P2juwc_GQjJuzlTd \n")
+    time.sleep(1)
+
+elif age > 19 and age < 65:
+    if train.lower() == "yes":
+        print("That's amazing for your age!!! \n")
+    else:
+        print("It's okay! Cosidering your age, try to do soft training \n")
+
+    print("Not to mention \n")
+    underwight()
+    overweight()
+    print("Also... \n")
+    adults()
+    print("Here is a video to help you with your diet")
+    print("https://youtu.be/fqhYBTg73fw?si=pQzMDpP00ULzwHpE \n")
+    time.sleep(1)
+
+else:
+    if train.lower() == "yes":
+        print("Great job!!! \n")
+    else:
+        print("Why not start training then? \n")
+        
+    print("Not to mention \n")
+    underwight()
+    overweight()
+    print("Also...\n")
+
+    print("As for your age, your diet is: \n")
+    time.sleep(1)
+    print("80-92% fiber, 29–35% fats, and 10–12% protein. \n")
+    time.sleep(1)
+    print(f"dont forget to {advice_choose} \n")
+    time.sleep(1)
+    print("Here is a video to help you with your diet")
+    print("https://youtu.be/uDvN2nPkq2Q?si=yAwqxhgFc_PVUj0d \n")
+    time.sleep(1)
+        
+    
+
+#Reminder
+print("All in all, no matter your age...")
+print("STAY HYDRATED AND SLEEP EARLY\n")
+time.sleep(1)
+
+#Contact us
+print("If you have any inquires, please contact us via: ")
+print("Phone: +1 (942) 826-4126")
+print("Email: support@health-horizons.com\n")
+time.sleep(1)
+
+#Rating
+rating = input("Please rate our service from 1-5: ")
+print("Thank you")
